@@ -6,47 +6,108 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
         <title>Piedra, papel, tijera, lagarto y Spock</title>
         <meta name="description" content="videojuego basado en un capítulo de The Big Band Theory">
-		<meta name="keywords" content="">
-		<meta name="robots" content="">
+		<meta name="keywords" content="Piedra, papel, tijera, lagarto, Spock, videojuego, The Big Band Theory">
+		<meta name="robots" content="index, follow">
         <meta name="viewport" content="width=device-width">
 
         <link rel="stylesheet" href="http://necolas.github.io/normalize.css/2.1.1/normalize.css" media="all">
-        <link rel="stylesheet" href="">
 
         <!-- !Modernizr -->
         <!-- Todos los JavaScript en la parte inferior, a excepción de Modernizr, Modernizr permite elementos de HTML5 en navegadores obsoletos -->
  		<script src="http://modernizr.com/downloads/modernizr.js"></script>
     </head>
     <body>
-        <!--[if lt IE 7]>
-            <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
-        <![endif]-->
-        <!-- #container -->
-        
-        <!-- probar si se soportan etiquetas HTML5-->
-		<!--
-		<script>
-		if (Modernizr.borderradius){
-		  alert('Soporta borderradius');
-		}else {
-		  alert('No Soporta borderradius');
-		}
-		</script>
-		-->
-        
-        <!-- !#container -->
-        <section id="container">
+        <!-- !Reglas-->
+<section class="md-modal md-effect-8" id="modal-8">
+			<div class="md-content">
+				<h3>Reglas</h3>
+				<div>
+					<p>
+						Tal como las explicó Sheldon en The big bang theory:<br>
+“Las tijeras cortan el papel, el papel cubre a la piedra, la piedra aplasta al lagarto, el lagarto envenena a Spock, Spock destroza las tijeras, las tijeras decapitan al lagarto, el lagarto se come el papel, el papel refuta a Spock, Spock vaporiza la piedra, y, como es habitual… la piedra aplasta las tijeras.”
+					</p>
+					<a class="boton md-close"><span class="fa fa-arrow-left"></span> Volver</a>
+				</div>
+			</div>
+		</section>
+<!-- /Reglas-->
 
+<!-- !#container -->
+<section id="container">
+ <!-- !Marcador -->
+<h1><span id="M-Usuario">0</span>  /  <span id="M-Maquina">0</span></h1>
+
+<!-- !Versus -->
+<section id="tablero">
+  <div id="versus">
+    <div id="usuario" class="opcion">
+      <img src="http://arkev.com/shared/PPTLS/piedra.jpg" class="uspiedra">
+      <img src="http://arkev.com/shared/PPTLS/papel.jpg" class="uspapel">
+      <img src="http://arkev.com/shared/PPTLS/tijera.jpg" class="ustijera">
+      <img src="http://arkev.com/shared/PPTLS/lagarto.jpg" class="uslagarto">
+      <img src="http://arkev.com/shared/PPTLS/spock.jpg" class="usspock">
+      <div id="nombre-usuario">Usuario</div>
+    </div>
+    <div class="opcion">V.S.</div>
+    <div id="maquina" class="opcion">
+      <img src="http://arkev.com/shared/PPTLS/piedra.jpg" class="mapiedra">
+      <img src="http://arkev.com/shared/PPTLS/papel.jpg" class="mapapel">
+      <img src="http://arkev.com/shared/PPTLS/tijera.jpg" class="matijera">
+      <img src="http://arkev.com/shared/PPTLS/lagarto.jpg" class="malagarto">
+      <img src="http://arkev.com/shared/PPTLS/spock.jpg" class="maspock">
+      <div id="sheldon">Sheldon</div>
+    </div>
+  </div>
+  <div id="resultado"></div>
+</section>
+<!-- /Versus -->
+
+<!-- !#Opciones -->
+<section id="opciones">
+  <a href="#" id="piedra" onclick="rock()" class="opcion"><img src="http://arkev.com/shared/PPTLS/piedra.jpg"></a>
+  <a href="#" id="papel" onclick="paper()" class="opcion"><img src="http://arkev.com/shared/PPTLS/papel.jpg"></a>
+  <a href="#" id="tijera" onclick="ciseaux()" class="opcion"><img src="http://arkev.com/shared/PPTLS/tijera.jpg"></a>
+  <a href="#" id="lagarto" onclick="lizard()" class="opcion"><img src="http://arkev.com/shared/PPTLS/lagarto.jpg"></a>
+  <a href="#" id="spock" onclick="mrSpock()" class="opcion"><img src="http://arkev.com/shared/PPTLS/spock.jpg"></a>
+</section>  
+<!-- /Opciones -->
+
+<!-- !#Botones -->
+<section id="botones">
+   <div class="col50">
+    <div class="colCenter">
+        <a class="boton md-trigger" data-modal="modal-8" href="#">    <span class="fa fa-info"></span>
+        </a>
+    </div>
+   </div>
+  
+  <div class="col50">
+    <div class="colCenter">
+        <a class="boton" href="#" onclick="resetear()">
+          <span class="fa fa-refresh"></span>
+      </a>
+    </div>
+   </div>
+</section>
+<!-- /Botones -->
+
+<!-- !#Lanscape -->
+<section id="lanscape">
+  <img src="http://arkev.com/shared/PPTLS/girar.png">
+  <h2>Gira tu dispositivo</h2>
+</section>
+<!-- /lanscape -->
+</section>  
+<!-- /container -->
+
+<!-- !the overlay element -->
+<div class="md-overlay"></div>
         
-        </section><!-- /#container -->
-        
-        <!-- jQuery --> 
-        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
-        <script>
-            var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
-            (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
-            g.src='//www.google-analytics.com/ga.js';
-            s.parentNode.insertBefore(g,s)}(document,'script'));
-        </script>
+        <!-- !prefix-free --> 
+        <script src="https://raw.github.com/LeaVerou/prefixfree/gh-pages/prefixfree.min.js"></script>
+        <!-- Classie | class helper functions http://goo.gl/J5ECzy -->
+        <script src="http://arkev.com/shared/PPTLS/classie.js"></script>
+        <!-- NIFTY MODAL WINDOW EFFECTS | http://goo.gl/CSSef6 --> 
+        <script src="http://arkev.com/shared/PPTLS/modalEffects.js"></script>
     </body>
 </html>
