@@ -133,14 +133,16 @@ h2{
   }
   .opcion{
     width:33%;
+    display: inline-block;
     .font-size(30);
     img {
-      width: 100%;
-      display:none;
+      display: none;
+      width: 0%;
+      &.show{
+      	width:100%;
+      	display:block;
+	  }
     }
-    &:first-child{.flexColumn(@flexLeft);}
-    &:nth-child(2n){.flexColumn(@flexCenter);}
-    &:nth-child(3){.flexColumn(@flexRight);}
   }
 }
 #nombre-usuario, #sheldon {
@@ -148,6 +150,7 @@ h2{
   margin-top: 3px;
   height: 1em;
   overflow: hidden;
+  display:block;
   .font-size(16);
 }
 #resultado{
@@ -278,7 +281,7 @@ h2{
       display:none;
   }
 }
-.show{display:block!important;}
+
 .hide{display:none;}
 
 /* Reglas */
