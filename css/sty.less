@@ -1,0 +1,374 @@
+//Importar
+@import url(http://fonts.googleapis.com/css?family=Asap:400,700,400italic,700italic);
+@import url(http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css);
+
+
+//variables
+@blanco:white;
+@steelblue:#2d8ec2;
+@dark-steelblue:(@steelblue - #0c1316);
+@darkcyan:#0067b5;
+@teal:#0a529c;
+@flexLeft:flex-start;
+@flexCenter:center;
+@flexRight:flex-end;
+@mobile:        ~"only screen and (min-width: 320px)";
+@smallTablet:   ~"only screen and (min-width: 569px)";
+@tablet:        ~"only screen and (min-width: 768px)";
+@desktop:       ~"only screen and (min-width: 800px)";
+@tabletLandscape:       ~"only screen and (min-width: 1024px)";
+@landscape:     ~"and (orientation: landscape)";
+@portrait:       ~"and (orientation: portrait)";
+
+
+//Mixins
+.asap{font-family: 'Asap', sans-serif;}
+
+.font-size(@sizeValue) {
+  @remValue: @sizeValue;
+  @pxValue: (@sizeValue * 1);
+  font-size: ~"@{pxValue}px"; 
+  font-size: ~"@{remValue}rem";
+}
+
+.flexColumn(@flexAlign){
+  display: flex;
+  align-items:@flexAlign;
+  justify-content:@flexAlign;
+  flex-flow: column wrap;
+}
+
+.boxShadow{
+  box-shadow: 
+    rgb(13, 93, 158) 1px 1px,
+    rgb(13, 93, 158) 2px 2px,
+    rgb(13, 93, 158) 3px 3px,
+    rgb(13, 93, 158) 4px 4px,
+    rgb(13, 93, 158) 5px 5px,
+}
+
+.textShadow{
+    text-shadow: 
+      rgba(46, 129, 173, 1) 1px 1px,
+      rgba(46, 129, 173, 9) 2px 2px,
+      rgba(46, 129, 173, 0.8) 3px 3px,
+      rgba(46, 129, 173, 0.7) 4px 4px,
+      rgba(46, 129, 173, 0.6) 5px 5px,
+      rgba(46, 129, 173, 0.5) 6px 6px,
+      rgba(46, 129, 173, 0.4) 7px 7px,
+      rgba(46, 129, 173, 0.3) 8px 8px,
+      rgba(46, 129, 173, 0.2) 9px 9px,
+      rgba(46, 129, 173, 0.1) 10px 10px,
+      rgba(46, 129, 173, 0.0) 11px 11px,
+}
+
+.borderRadius(@radius) {border-radius: @radius;}
+
+//Generales
+html {
+  font-size: 6.25%; /* Sets up the Base 10 stuff */
+}
+
+body{
+  background:black;
+  color:@blanco;
+  .font-size(16);
+  .asap;
+}
+
+#container{
+  width:100%;
+  margin:0 auto;
+  max-width:500px;
+}
+
+h1{
+  font-weight : bold;
+  text-align:center;
+  margin: 0.1em;
+  .font-size(50);
+  @media @mobile {
+      .font-size(30);
+  }
+  @media @smallTablet {
+      .font-size(50);
+  }
+  @media @mobile @landscape{
+      display:none;
+  }
+  @media @desktop @landscape{
+      display:block;
+  }
+}
+h2{
+  font-weight : bold;
+  .font-size(36);
+}
+#versus{
+  width:80%;
+  max-width:600px;
+  display:flex;
+  margin:0 auto;
+  text-align:center;
+  @media @mobile {
+  	height: 109px;
+  	max-width: 290px;
+  }
+  @media @smallTablet {
+  	height: 124px;
+  	max-width: 313px;
+  }
+  @media @tablet {
+      width: 70%;
+      height: 137px;
+      max-width: 350px;
+  }
+  @media @desktop {
+      width: 50%;
+      height: 104px;
+  }
+  @media @tabletLandscape {
+      width: 75%;
+      height: 145px;
+  }
+  .opcion{
+    width:33%;
+    display: inline-block;
+    .font-size(30);
+    img {
+      display: none;
+      width: 0%;
+      &.show{
+      	width:100%;
+      	display:block;
+	  }
+    }
+  }
+}
+#nombre-usuario, #sheldon {
+  width: 100%;
+  margin-top: 3px;
+  height: 1em;
+  overflow: hidden;
+  display:block;
+  .font-size(16);
+}
+#resultado{
+    width:100%;
+    display:block;
+    text-align:center;
+    height: 1.2em;
+    .font-size(30);
+}
+#opciones{
+    margin: 2rem auto 0;
+    position: relative;
+    width: 250px;
+    height: 215px;
+    @media @mobile {
+      width: 250px;
+      height: 215px;
+    }
+    @media @mobile @landscape{
+      display:none;
+    }
+    @media @smallTablet {
+      width: 450px;
+      height: 385px;
+    }
+    @media @desktop {
+      height: 270px;
+      width: 320px;
+      display:block;
+    }
+    @media @tabletLandscape {
+      height: 400px;
+      width: 450px;
+    }
+    a{
+      width:31%;
+      position:absolute;
+      img{width:100%;}
+    }
+    #piedra{
+      left:34.5%;
+      top:0%;
+    }
+    #papel{
+      left:3%;
+      top:22%;
+    }
+    #tijera{
+      right:3%;
+      top:22%;
+    }
+    #lagarto{
+      left:15%;
+      top:63%;
+    }
+    #spock{
+      right:15%;
+      top:63%;
+    }
+}
+#tablero{
+  @media @mobile @landscape{
+      display:none;
+  }
+  @media @desktop{
+      display:block;
+  }
+}
+#botones{
+  margin-top:.5em;
+  display:flex;
+  height: 45px;
+    .col50{
+      width:50%;
+      .flexColumn(@flexLeft);
+      .colCenter{
+        width:100%;
+        .flexColumn(@flexCenter);
+      }
+    }
+  @media @mobile @landscape{
+      display:none;
+  }
+  @media @smallTablet{
+      width: 320px;
+      margin: 2em auto 0;
+  }
+  @media @desktop{
+      display:flex;
+  }
+}
+
+.boton {
+    background-color: @steelblue;
+    height: 36px;
+    width: 36px;
+    text-align: center;
+    line-height: 1.5em;
+    .font-size(24);
+    .borderRadius(8px);
+    .textShadow;
+    .boxShadow;
+    &:link, &:visited, &:hover, &:active {
+      color: @blanco;
+      text-decoration: none;
+    }
+    &:active {
+      text-shadow:initial;
+      box-shadow:initial;
+      background-color:@dark-steelblue;
+      margin:5px 0 0 5px;
+    }
+}
+#lanscape{
+  @media @mobile @portrait{
+      display:none;
+  }
+  @media @mobile @landscape{
+      display:block;
+    h2{text-align:center;}
+    img{
+      margin:1em auto 0;
+      width:35%;
+      display:block;
+    }
+  }
+  @media @desktop{
+      display:none;
+  }
+}
+
+.hide{display:none;}
+
+/* Reglas */
+.md-modal {
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	width: 50%;
+	max-width: 630px;
+	min-width: 320px;
+	height: auto;
+	z-index: 2000;
+	visibility: hidden;
+	backface-visibility: hidden;
+	transform: translateX(-50%) translateY(-50%);
+}
+
+.md-show {
+	visibility: visible;
+    &~ .md-overlay {
+	  opacity: 1;
+	  visibility: visible;
+  }
+}
+
+.md-overlay {
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	visibility: hidden;
+	top: 0;
+	left: 0;
+	z-index: 1000;
+	opacity: 0;
+	background: rgba(2,54,89,0.8);
+	transition: all 0.3s;
+}
+
+/* Content styles */
+.md-content {
+	background:@darkcyan;
+	position: relative;
+	margin: 0 auto;
+  .borderRadius(3px);
+  h3 {
+    margin: 0;
+    padding: 0.4em;
+    font-weight: 300;
+    opacity: 0.8;
+    background:@teal;
+    border-radius: 3px 3px 0 0;
+    text-align: center;
+    .font-size(24);
+  }
+  &> div {
+    padding: 15px 40px 30px;
+    margin: 0;
+    font-weight: 300;
+    .font-size(16);
+    p {
+      margin: 0;
+      padding: 10px 0 1.5em;
+      line-height: 1.3em;
+    }
+    ul {
+      margin: 0;
+      padding: 0 0 30px 20px;
+      li {padding: 5px 0;}
+    }
+  }
+  .boton {
+    padding: 7px;
+    margin: 1em auto;
+  }
+}
+
+/* Effect 8: 3D flip horizontal */
+.md-effect-8{
+  &.md-modal {perspective: 1300px;}
+  .md-content {
+    transform-style: preserve-3d;
+    transform: rotateY(-70deg);
+    transition: all 0.3s;
+    opacity: 0;
+  }
+}
+.md-show.md-effect-8 .md-content {
+	transform: rotateY(0deg);
+	opacity: 1;
+}
