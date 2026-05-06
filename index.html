@@ -33,6 +33,49 @@
 		</section>
 <!-- /Reglas-->
 
+<!-- !Setup inicial -->
+<section class="md-modal md-effect-8" id="modal-setup">
+    <div class="md-content">
+        <h3>Nueva partida</h3>
+        <div class="md-form">
+            <label for="input-nickname">Nickname</label>
+            <input type="text" id="input-nickname" value="Usuario" maxlength="20" autocomplete="off">
+            <label for="input-victorias">Victorias para ganar</label>
+            <input type="number" id="input-victorias" value="3" min="1" max="99">
+            <a class="boton boton-ancho" id="btn-iniciar" href="#"><span class="fa fa-play"></span> Iniciar</a>
+        </div>
+    </div>
+</section>
+<!-- /Setup inicial -->
+
+<!-- !Cambiar victorias -->
+<section class="md-modal md-effect-8" id="modal-victorias">
+    <div class="md-content">
+        <h3>Cambiar victorias</h3>
+        <div class="md-form">
+            <label for="input-cambiar-victorias">Victorias para ganar</label>
+            <input type="number" id="input-cambiar-victorias" value="3" min="1" max="99">
+            <a class="boton boton-ancho" id="btn-cambiar-victorias" href="#"><span class="fa fa-check"></span> Aplicar</a>
+        </div>
+    </div>
+</section>
+<!-- /Cambiar victorias -->
+
+<!-- !Final de partida -->
+<section class="md-modal md-effect-8" id="modal-final">
+    <div class="md-content">
+        <h3 id="final-titulo">¡Ganaste!</h3>
+        <div>
+            <p id="final-mensaje"></p>
+            <div class="finale-botones">
+                <a class="boton" id="btn-final-reiniciar" href="#" title="Reiniciar"><span class="fa fa-refresh"></span></a>
+                <a class="boton" id="btn-final-cambiar"   href="#" title="Cambiar victorias"><span class="fa fa-cog"></span></a>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- /Final de partida -->
+
 <!-- !#container -->
 <section id="container">
  <!-- !Marcador -->
@@ -65,12 +108,12 @@
 
 <!-- !#Opciones -->
 <section id="opciones">
-  <a href="#" id="piedra" onclick="rock()" class="opcion"><img src="images/piedra.png"></a>
-  <a href="#" id="papel" onclick="paper()" class="opcion"><img src="images/papel.png"></a>
-  <a href="#" id="tijera" onclick="ciseaux()" class="opcion"><img src="images/tijeras.png"></a>
-  <a href="#" id="lagarto" onclick="lizard()" class="opcion"><img src="images/lagarto.png"></a>
-  <a href="#" id="spock" onclick="mrSpock()" class="opcion"><img src="images/spock.png"></a>
-</section>  
+  <a href="#" id="piedra"  class="opcion"><img src="images/piedra.png"></a>
+  <a href="#" id="papel"   class="opcion"><img src="images/papel.png"></a>
+  <a href="#" id="tijera"  class="opcion"><img src="images/tijeras.png"></a>
+  <a href="#" id="lagarto" class="opcion"><img src="images/lagarto.png"></a>
+  <a href="#" id="spock"   class="opcion"><img src="images/spock.png"></a>
+</section>
 <!-- /Opciones -->
 
 <!-- !#Botones -->
@@ -81,10 +124,10 @@
         </a>
     </div>
    </div>
-  
+
   <div class="col50">
     <div class="colCenter">
-        <a class="boton" href="#" onclick="resetear()">
+        <a class="boton" id="btn-reset" href="#">
           <span class="fa fa-refresh"></span>
       </a>
     </div>
@@ -98,19 +141,19 @@
   <h2>Gira tu dispositivo</h2>
 </section>
 <!-- /lanscape -->
-</section>  
+</section>
 <!-- /container -->
 
 <!-- !the overlay element -->
 <div class="md-overlay"></div>
 
 		<!-- JavaScripts -->
-        <!-- !prefix-free --> 
+        <!-- !prefix-free -->
         <script src="https://raw.github.com/LeaVerou/prefixfree/gh-pages/prefixfree.min.js"></script>
         <!-- Classie | class helper functions http://goo.gl/J5ECzy -->
         <script src="js/min/classie-min.js"></script>
-        <!-- NIFTY MODAL WINDOW EFFECTS | http://goo.gl/CSSef6 --> 
+        <!-- NIFTY MODAL WINDOW EFFECTS | http://goo.gl/CSSef6 -->
         <script src="js/min/modalEffects-min.js"></script>
-        <script src="js/min/programacion-min.js"></script>
+        <script src="js/programacion.js"></script>
     </body>
 </html>
