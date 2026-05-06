@@ -9,6 +9,14 @@
   ],
   "creatorBuild" : "34127",
   "files" : {
+    "\/.claude\/worktrees\/angry-johnson-61ce99\/.claude\/settings.local.json" : {
+      "ft" : 524288,
+      "oA" : 1,
+      "oAP" : "\/.claude\/worktrees\/angry-johnson-61ce99\/.claude\/settings.local-min.json",
+      "oF" : 0,
+      "oO" : 1,
+      "oS" : 1
+    },
     "\/.claude\/worktrees\/angry-johnson-61ce99\/css\/sty.less" : {
       "aP" : 0,
       "bl" : 0,
