@@ -372,3 +372,73 @@ h2{
 	transform: rotateY(0deg);
 	opacity: 1;
 }
+
+/* Formularios dentro de modales */
+.md-form{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  label{
+    display:block;
+    width:100%;
+    max-width:280px;
+    margin-top:.6em;
+    font-weight:bold;
+    .font-size(14);
+    text-align:left;
+    opacity:.9;
+  }
+  input{
+    .asap;
+    .font-size(16);
+    padding:8px 10px;
+    border:none;
+    .borderRadius(4px);
+    width:100%;
+    max-width:280px;
+    box-sizing:border-box;
+    background:@blanco;
+    color:@darkcyan;
+    margin-top:4px;
+    outline:0;
+    &:focus{box-shadow:0 0 0 2px @steelblue;}
+  }
+}
+
+/* Variante de boton con texto */
+.boton-ancho{
+  width:auto;
+  height:auto;
+  padding:8px 22px;
+  .font-size(16);
+  line-height:1.2em;
+  margin-top:1.2em;
+}
+
+/* Botones del modal final */
+.finale-botones{
+  display:flex;
+  justify-content:center;
+  gap:18px;
+  margin-top:.5em;
+  .boton{margin:0;}
+}
+
+/* Animaciones rapidas de ronda */
+@keyframes versus-pop{
+  0%   {transform:scale(.94);}
+  55%  {transform:scale(1.05);}
+  100% {transform:scale(1);}
+}
+@keyframes resultado-pop{
+  0%   {opacity:0; transform:translateY(8px) scale(.85);}
+  60%  {opacity:1; transform:translateY(0)   scale(1.12);}
+  100% {transform:scale(1);}
+}
+#versus.flash    {animation: versus-pop    .35s ease-out;}
+#resultado.flash {animation: resultado-pop .4s  ease-out;}
+
+#opciones a{
+  transition: transform .15s ease;
+  &:active{transform:scale(.92);}
+}

@@ -1,116 +1,170 @@
 <!DOCTYPE html>
 <!--[if IE 8]>         <html class="no-js ie8"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="es"> <!--<![endif]-->
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title>Piedra, papel, tijera, lagarto y Spock</title>
-        <meta name="description" content="videojuego basado en un capítulo de The Big Band Theory">
-		<meta name="keywords" content="Piedra, papel, tijera, lagarto, Spock, videojuego, The Big Band Theory">
-		<meta name="robots" content="index, follow">
-        <meta name="viewport" content="width=device-width">
-		<!-- Normalize | http://necolas.github.io/normalize.css -->
-        <link rel="stylesheet" href="http://necolas.github.com/normalize.css/3.0.1/normalize.css" media="all">
-        <link rel="stylesheet" href="css/styles.css" media="all">
+<!--[if gt IE 8]><!-->
+<html class="no-js" lang="es"> <!--<![endif]-->
 
-        <!-- !Modernizr -->
-        <!-- Todos los JavaScript en la parte inferior, a excepción de Modernizr, Modernizr permite elementos de HTML5 en navegadores obsoletos -->
- 		<script src="http://modernizr.com/downloads/modernizr.js"></script>
-    </head>
-    <body>
-        <!-- !Reglas-->
-<section class="md-modal md-effect-8" id="modal-8">
-			<div class="md-content">
-				<h3>Reglas</h3>
-				<div>
-					<p>
-						Tal como las explicó Sheldon en The big bang theory:<br>
-“Las tijeras cortan el papel, el papel cubre a la piedra, la piedra aplasta al lagarto, el lagarto envenena a Spock, Spock destroza las tijeras, las tijeras decapitan al lagarto, el lagarto se come el papel, el papel refuta a Spock, Spock vaporiza la piedra, y, como es habitual… la piedra aplasta las tijeras.”
-					</p>
-					<a class="boton md-close"><span class="fa fa-arrow-left"></span> Volver</a>
-				</div>
-			</div>
-		</section>
-<!-- /Reglas-->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Piedra, papel, tijera, lagarto y Spock</title>
+    <meta name="description" content="videojuego basado en un capítulo de The Big Band Theory">
+    <meta name="keywords" content="Piedra, papel, tijera, lagarto, Spock, videojuego, The Big Band Theory">
+    <meta name="robots" content="index, follow">
+    <meta name="viewport" content="width=device-width">
+    <!-- Normalize | http://necolas.github.io/normalize.css -->
+    <link rel="stylesheet" href="http://necolas.github.com/normalize.css/3.0.1/normalize.css" media="all">
+    <link rel="stylesheet" href="css/styles.css" media="all">
 
-<!-- !#container -->
-<section id="container">
- <!-- !Marcador -->
-<h1><span id="M-Usuario">0</span>  /  <span id="M-Maquina">0</span></h1>
+    <!-- !Modernizr -->
+    <!-- Todos los JavaScript en la parte inferior, a excepción de Modernizr, Modernizr permite elementos de HTML5 en navegadores obsoletos -->
+    <script src="http://modernizr.com/downloads/modernizr.js"></script>
+</head>
 
-<!-- !Versus -->
-<section id="tablero">
-  <div id="versus">
-    <div id="usuario" class="opcion">
-      <img src="images/piedra.png" class="uspiedra">
-      <img src="images/papel.png" class="uspapel">
-      <img src="images/tijeras.png" class="ustijera">
-      <img src="images/lagarto.png" class="uslagarto">
-      <img src="images/spock.png" class="usspock">
-      <div id="nombre-usuario">Usuario</div>
-    </div>
-    <div class="opcion">V.S.</div>
-    <div id="maquina" class="opcion">
-      <img src="images/piedra.png" class="mapiedra">
-      <img src="images/papel.png" class="mapapel">
-      <img src="images/tijeras.png" class="matijera">
-      <img src="images/lagarto.png" class="malagarto">
-      <img src="images/spock.png" class="maspock">
-      <div id="sheldon">Sheldon</div>
-    </div>
-  </div>
-  <div id="resultado"></div>
-</section>
-<!-- /Versus -->
+<body>
+    <!-- !Reglas-->
+    <section class="md-modal md-effect-8" id="modal-8">
+        <div class="md-content">
+            <h3>Reglas</h3>
+            <div>
+                <p>
+                    Tal como las explicó Sheldon en The big bang theory:<br>
+                    “Las tijeras cortan el papel, el papel cubre a la piedra, la piedra aplasta al lagarto, el lagarto
+                    envenena a Spock, Spock destroza las tijeras, las tijeras decapitan al lagarto, el lagarto se come
+                    el papel, el papel refuta a Spock, Spock vaporiza la piedra, y, como es habitual… la piedra aplasta
+                    las tijeras.”
+                </p>
+                <a class="boton md-close"><span class="fa fa-arrow-left"></span> Volver</a>
+            </div>
+        </div>
+    </section>
+    <!-- /Reglas-->
 
-<!-- !#Opciones -->
-<section id="opciones">
-  <a href="#" id="piedra" onclick="rock()" class="opcion"><img src="images/piedra.png"></a>
-  <a href="#" id="papel" onclick="paper()" class="opcion"><img src="images/papel.png"></a>
-  <a href="#" id="tijera" onclick="ciseaux()" class="opcion"><img src="images/tijeras.png"></a>
-  <a href="#" id="lagarto" onclick="lizard()" class="opcion"><img src="images/lagarto.png"></a>
-  <a href="#" id="spock" onclick="mrSpock()" class="opcion"><img src="images/spock.png"></a>
-</section>  
-<!-- /Opciones -->
+    <!-- !Setup inicial -->
+    <section class="md-modal md-effect-8" id="modal-setup">
+        <div class="md-content">
+            <h3>Nueva partida</h3>
+            <div class="md-form">
+                <label for="input-nickname">Nickname</label>
+                <input type="text" id="input-nickname" value="" placeholder="Introduce tu nickname" maxlength="20"
+                    autocomplete="off">
+                <label for="input-victorias">Victorias para ganar</label>
+                <input type="number" id="input-victorias" value="3" min="1" max="99">
+                <a class="boton boton-ancho" id="btn-iniciar" href="#"><span class="fa fa-play"></span> Iniciar</a>
+            </div>
+        </div>
+    </section>
+    <!-- /Setup inicial -->
 
-<!-- !#Botones -->
-<section id="botones">
-   <div class="col50">
-    <div class="colCenter">
-        <a class="boton md-trigger" data-modal="modal-8" href="#">    <span class="fa fa-info"></span>
-        </a>
-    </div>
-   </div>
-  
-  <div class="col50">
-    <div class="colCenter">
-        <a class="boton" href="#" onclick="resetear()">
-          <span class="fa fa-refresh"></span>
-      </a>
-    </div>
-   </div>
-</section>
-<!-- /Botones -->
+    <!-- !Cambiar victorias -->
+    <section class="md-modal md-effect-8" id="modal-victorias">
+        <div class="md-content">
+            <h3>Cambiar victorias</h3>
+            <div class="md-form">
+                <label for="input-cambiar-victorias">Victorias para ganar</label>
+                <input type="number" id="input-cambiar-victorias" value="3" min="1" max="99">
+                <a class="boton boton-ancho" id="btn-cambiar-victorias" href="#"><span class="fa fa-check"></span>
+                    Aplicar</a>
+            </div>
+        </div>
+    </section>
+    <!-- /Cambiar victorias -->
 
-<!-- !#Lanscape -->
-<section id="lanscape">
-  <img src="http://arkev.com/shared/PPTLS/girar.png">
-  <h2>Gira tu dispositivo</h2>
-</section>
-<!-- /lanscape -->
-</section>  
-<!-- /container -->
+    <!-- !Final de partida -->
+    <section class="md-modal md-effect-8" id="modal-final">
+        <div class="md-content">
+            <h3 id="final-titulo">¡Ganaste!</h3>
+            <div>
+                <p id="final-mensaje"></p>
+                <div class="finale-botones">
+                    <a class="boton" id="btn-final-reiniciar" href="#" title="Reiniciar"><span
+                            class="fa fa-refresh"></span></a>
+                    <a class="boton" id="btn-final-cambiar" href="#" title="Cambiar victorias"><span
+                            class="fa fa-cog"></span></a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- /Final de partida -->
 
-<!-- !the overlay element -->
-<div class="md-overlay"></div>
+    <!-- !#container -->
+    <section id="container">
+        <!-- !Marcador -->
+        <h1><span id="M-Usuario">0</span> / <span id="M-Maquina">0</span></h1>
 
-		<!-- JavaScripts -->
-        <!-- !prefix-free --> 
-        <script src="https://raw.github.com/LeaVerou/prefixfree/gh-pages/prefixfree.min.js"></script>
-        <!-- Classie | class helper functions http://goo.gl/J5ECzy -->
-        <script src="js/min/classie-min.js"></script>
-        <!-- NIFTY MODAL WINDOW EFFECTS | http://goo.gl/CSSef6 --> 
-        <script src="js/min/modalEffects-min.js"></script>
-        <script src="js/min/programacion-min.js"></script>
-    </body>
+        <!-- !Versus -->
+        <section id="tablero">
+            <div id="versus">
+                <div id="usuario" class="opcion">
+                    <img src="images/piedra.png" class="uspiedra">
+                    <img src="images/papel.png" class="uspapel">
+                    <img src="images/tijeras.png" class="ustijera">
+                    <img src="images/lagarto.png" class="uslagarto">
+                    <img src="images/spock.png" class="usspock">
+                    <div id="nombre-usuario">Usuario</div>
+                </div>
+                <div class="opcion">V.S.</div>
+                <div id="maquina" class="opcion">
+                    <img src="images/piedra.png" class="mapiedra">
+                    <img src="images/papel.png" class="mapapel">
+                    <img src="images/tijeras.png" class="matijera">
+                    <img src="images/lagarto.png" class="malagarto">
+                    <img src="images/spock.png" class="maspock">
+                    <div id="sheldon">Sheldon</div>
+                </div>
+            </div>
+            <div id="resultado"></div>
+        </section>
+        <!-- /Versus -->
+
+        <!-- !#Opciones -->
+        <section id="opciones">
+            <a href="#" id="piedra" class="opcion"><img src="images/piedra.png"></a>
+            <a href="#" id="papel" class="opcion"><img src="images/papel.png"></a>
+            <a href="#" id="tijera" class="opcion"><img src="images/tijeras.png"></a>
+            <a href="#" id="lagarto" class="opcion"><img src="images/lagarto.png"></a>
+            <a href="#" id="spock" class="opcion"><img src="images/spock.png"></a>
+        </section>
+        <!-- /Opciones -->
+
+        <!-- !#Botones -->
+        <section id="botones">
+            <div class="col50">
+                <div class="colCenter">
+                    <a class="boton md-trigger" data-modal="modal-8" href="#"> <span class="fa fa-info"></span>
+                    </a>
+                </div>
+            </div>
+
+            <div class="col50">
+                <div class="colCenter">
+                    <a class="boton" id="btn-reset" href="#">
+                        <span class="fa fa-refresh"></span>
+                    </a>
+                </div>
+            </div>
+        </section>
+        <!-- /Botones -->
+
+        <!-- !#Lanscape -->
+        <section id="lanscape">
+            <img src="http://arkev.com/shared/PPTLS/girar.png">
+            <h2>Gira tu dispositivo</h2>
+        </section>
+        <!-- /lanscape -->
+    </section>
+    <!-- /container -->
+
+    <!-- !the overlay element -->
+    <div class="md-overlay"></div>
+
+    <!-- JavaScripts -->
+    <!-- !prefix-free -->
+    <script src="https://raw.github.com/LeaVerou/prefixfree/gh-pages/prefixfree.min.js"></script>
+    <!-- Classie | class helper functions http://goo.gl/J5ECzy -->
+    <script src="js/min/classie-min.js"></script>
+    <!-- NIFTY MODAL WINDOW EFFECTS | http://goo.gl/CSSef6 -->
+    <script src="js/min/modalEffects-min.js"></script>
+    <script src="js/min/programacion-min.js"></script>
+</body>
+
 </html>
