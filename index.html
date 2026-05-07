@@ -22,9 +22,24 @@
     <!-- !Modernizr -->
     <!-- Todos los JavaScript en la parte inferior, a excepción de Modernizr, Modernizr permite elementos de HTML5 en navegadores obsoletos -->
     <script src="https://modernizr.com/downloads/modernizr.js"></script>
+    <!-- Evita el flash del splash en visitas posteriores -->
+    <script>
+        try {
+            if (localStorage.getItem('pptls_splash_seen')) {
+                document.documentElement.className += ' splash-done';
+            }
+        } catch (e) {}
+    </script>
 </head>
 
 <body>
+    <!-- !Splash (solo primera carga) -->
+    <section id="splash" aria-hidden="true">
+        <img src="images/pptls.jpg" alt="">
+        <div class="splash-bar"><span class="splash-fill"></span></div>
+    </section>
+    <!-- /Splash -->
+
     <!-- !Reglas-->
     <section class="md-modal md-effect-8" id="modal-8">
         <div class="md-content">
@@ -169,6 +184,24 @@
     <!-- NIFTY MODAL WINDOW EFFECTS | http://goo.gl/CSSef6 -->
     <script src="js/min/modalEffects-min.js"></script>
     <script src="js/min/programacion-min.js"></script>
+    <!-- Splash dismiss -->
+    <script>
+        (function () {
+            var splash = document.getElementById('splash');
+            if (!splash) return;
+            if (document.documentElement.classList.contains('splash-done')) {
+                splash.parentNode && splash.parentNode.removeChild(splash);
+                return;
+            }
+            setTimeout(function () {
+                splash.classList.add('hide');
+                try { localStorage.setItem('pptls_splash_seen', '1'); } catch (e) {}
+                setTimeout(function () {
+                    splash.parentNode && splash.parentNode.removeChild(splash);
+                }, 400);
+            }, 1900);
+        })();
+    </script>
 </body>
 
 </html>

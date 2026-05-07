@@ -86,6 +86,19 @@
       "q" : 100,
       "rq" : 75
     },
+    "\/images\/pptls.jpg" : {
+      "ft" : 16384,
+      "iS" : 40654,
+      "jF" : 0,
+      "oA" : 0,
+      "oAP" : "\/images\/pptls.jpg",
+      "oF" : 0,
+      "oIPL" : 0,
+      "opt" : 0,
+      "ou" : "lpckwebp-none",
+      "q" : 100,
+      "rq" : 75
+    },
     "\/images\/spock.png" : {
       "ft" : 32768,
       "iS" : 84081,

@@ -550,3 +550,56 @@ h2 {
     transform: scale(.92);
   }
 }
+/* Splash de bienvenida (solo primera carga) */
+#splash {
+  position: fixed;
+  inset: 0;
+  z-index: 3000;
+  background: #1d6db2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  box-sizing: border-box;
+  transition: opacity .35s ease, visibility .35s ease;
+
+  img {
+    display: block;
+    max-width: 70%;
+    max-height: 60vh;
+    width: auto;
+    height: auto;
+  }
+
+  .splash-bar {
+    margin-top: 28px;
+    width: 60%;
+    max-width: 280px;
+    height: 4px;
+    background: rgba(255, 255, 255, .18);
+    border-radius: 2px;
+    overflow: hidden;
+  }
+
+  .splash-fill {
+    display: block;
+    height: 100%;
+    width: 0;
+    background: @blanco;
+    animation: splash-fill 1.8s ease forwards;
+  }
+
+  &.hide {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+  }
+}
+
+html.splash-done #splash { display: none; }
+
+@keyframes splash-fill {
+  from { width: 0; }
+  to   { width: 100%; }
+}
