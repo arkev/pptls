@@ -9,8 +9,9 @@
 		<meta name="keywords" content="Piedra, papel, tijera, lagarto, Spock, videojuego, The Big Band Theory">
 		<meta name="robots" content="index, follow">
         <meta name="viewport" content="width=device-width">
-
-        <link rel="stylesheet" href="http://necolas.github.io/normalize.css/2.1.1/normalize.css" media="all">
+		<!-- Normalize | http://necolas.github.io/normalize.css -->
+        <link rel="stylesheet" href="http://necolas.github.com/normalize.css/3.0.1/normalize.css" media="all">
+        <link rel="stylesheet" href="css/styles.css" media="all">
 
         <!-- !Modernizr -->
         <!-- Todos los JavaScript en la parte inferior, a excepción de Modernizr, Modernizr permite elementos de HTML5 en navegadores obsoletos -->
@@ -41,20 +42,20 @@
 <section id="tablero">
   <div id="versus">
     <div id="usuario" class="opcion">
-      <img src="http://arkev.com/shared/PPTLS/piedra.jpg" class="uspiedra">
-      <img src="http://arkev.com/shared/PPTLS/papel.jpg" class="uspapel">
-      <img src="http://arkev.com/shared/PPTLS/tijera.jpg" class="ustijera">
-      <img src="http://arkev.com/shared/PPTLS/lagarto.jpg" class="uslagarto">
-      <img src="http://arkev.com/shared/PPTLS/spock.jpg" class="usspock">
+      <img src="images/Piedra.svg" class="uspiedra">
+      <img src="images/Papel.svg" class="uspapel">
+      <img src="images/Tijeras.svg" class="ustijera">
+      <img src="images/Lagarto.svg" class="uslagarto">
+      <img src="images/Spock.svg" class="usspock">
       <div id="nombre-usuario">Usuario</div>
     </div>
     <div class="opcion">V.S.</div>
     <div id="maquina" class="opcion">
-      <img src="http://arkev.com/shared/PPTLS/piedra.jpg" class="mapiedra">
-      <img src="http://arkev.com/shared/PPTLS/papel.jpg" class="mapapel">
-      <img src="http://arkev.com/shared/PPTLS/tijera.jpg" class="matijera">
-      <img src="http://arkev.com/shared/PPTLS/lagarto.jpg" class="malagarto">
-      <img src="http://arkev.com/shared/PPTLS/spock.jpg" class="maspock">
+      <img src="images/Piedra.svg" class="mapiedra">
+      <img src="images/Papel.svg" class="mapapel">
+      <img src="images/Tijeras.svg" class="matijera">
+      <img src="images/Lagarto.svg" class="malagarto">
+      <img src="images/Spock.svg" class="maspock">
       <div id="sheldon">Sheldon</div>
     </div>
   </div>
@@ -64,11 +65,11 @@
 
 <!-- !#Opciones -->
 <section id="opciones">
-  <a href="#" id="piedra" onclick="rock()" class="opcion"><img src="http://arkev.com/shared/PPTLS/piedra.jpg"></a>
-  <a href="#" id="papel" onclick="paper()" class="opcion"><img src="http://arkev.com/shared/PPTLS/papel.jpg"></a>
-  <a href="#" id="tijera" onclick="ciseaux()" class="opcion"><img src="http://arkev.com/shared/PPTLS/tijera.jpg"></a>
-  <a href="#" id="lagarto" onclick="lizard()" class="opcion"><img src="http://arkev.com/shared/PPTLS/lagarto.jpg"></a>
-  <a href="#" id="spock" onclick="mrSpock()" class="opcion"><img src="http://arkev.com/shared/PPTLS/spock.jpg"></a>
+  <a href="#" id="piedra" onclick="rock()" class="opcion"><img src="images/Piedra.svg"></a>
+  <a href="#" id="papel" onclick="paper()" class="opcion"><img src="images/Papel.svg"></a>
+  <a href="#" id="tijera" onclick="ciseaux()" class="opcion"><img src="images/Tijeras.svg"></a>
+  <a href="#" id="lagarto" onclick="lizard()" class="opcion"><img src="images/Lagarto.svg"></a>
+  <a href="#" id="spock" onclick="mrSpock()" class="opcion"><img src="images/Spock.svg"></a>
 </section>  
 <!-- /Opciones -->
 
@@ -102,12 +103,14 @@
 
 <!-- !the overlay element -->
 <div class="md-overlay"></div>
-        
+
+		<!-- JavaScripts -->
         <!-- !prefix-free --> 
         <script src="https://raw.github.com/LeaVerou/prefixfree/gh-pages/prefixfree.min.js"></script>
         <!-- Classie | class helper functions http://goo.gl/J5ECzy -->
-        <script src="http://arkev.com/shared/PPTLS/classie.js"></script>
+        <script src="js/min/classie-min.js"></script>
         <!-- NIFTY MODAL WINDOW EFFECTS | http://goo.gl/CSSef6 --> 
-        <script src="http://arkev.com/shared/PPTLS/modalEffects.js"></script>
+        <script src="js/min/modalEffects-min.js"></script>
+        <script src="js/min/programacion-min.js"></script>
     </body>
 </html>
